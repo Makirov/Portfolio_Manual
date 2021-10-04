@@ -1,0 +1,331 @@
+*
+    padding: 0
+    margin: 0
+    border: 0
+
+*,*:before,*:after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+nav,footer,header,aside
+    display: block
+
+html,body
+    height: 100%
+    width: 100%
+    font-size: 100%
+    line-height: 1
+    font-size: 14px
+    -ms-text-size-adjust: 100%
+    -moz-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+
+input,button,textarea
+    font-family: inherit
+
+input::-ms-clear
+    display: none
+
+button
+    cursor: pointer
+
+a, a:visited
+    text-decoration: none
+
+a:hover
+    text-decoration: none
+
+ul, li
+    list-style: none
+
+img
+    vertical-align: top
+
+h1,h2,h3,h4,h5,h6
+    font-size: inherit
+    font-weight: 400
+
+//========zero style==========
+
+//========fonts==========
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap')
+
+$ff: 'Roboto', sans-serif
+// font-family: $ff
+
+//========fonts==========
+
+//========colors==========
+
+$dark-green: #0B3B3C
+$lite-green: #00B67A
+$red_1: #7E0707
+$red_2: #6e0606
+$red_3: #5a0505
+$red_4: #3f0303
+$grey: #E8EFE9
+$grey-green: #6D8A83
+
+//========colors==========
+
+//========text==========
+
+%menu-link
+    display: inline-block
+    font-size: 1.2rem
+    line-height: 1.4rem
+    letter-spacing: 0.3rem
+    text-transform: uppercase
+    color: $dark-green
+    padding: 15px
+    transition: all 0.3s ease 0s
+    text-align: center
+
+    &:hover
+        transition: all 0s ease 0s
+        color: $lite-green
+
+    @media all and (max-width: 767px)
+        color: #ffffff
+// @extend %menu-link
+
+%paragraph
+    font-size: 1.8rem
+    line-height: 3.2rem
+// @extend %paragraph
+
+%title
+    font-size: 3.5rem
+    line-height: 6.0rem
+// @extend %title
+
+//========text==========
+
+//========def==========
+
+html, body
+    background-color: #ffffff
+    font-family: $ff
+    color: $dark-green
+
+    //========scroll==========
+    scrollbar-color: $dark-green #E8EFE9
+    scrollbar-width: thin
+
+html
+    font-size: 62.5%
+
+body._lock
+    overflow: hidden
+
+.wrapper
+    min-width: 360px
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    position: relative
+
+.container
+    max-width: 1440px // +20 padding
+    margin: 0 auto
+    padding: 0px 20px
+
+//========def==========
+
+//========adaptiv-font==========
+
+// $maxWidth: 
+// @mixin adaptiv-font($pcSize, $mobSize)
+//     $addSize: $pcSize - $mobSize
+//     $maxWidth: $maxWidth - 320
+//     font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}))
+// @include adaptiv-font(, )
+
+//========adaptiv-font==========
+
+//========scroll==========
+
+// полоса прокрутки (скроллбар)
+::-webkit-scrollbar
+    width: 6px // ширина для вертикального скролла
+    height: 6px // высота для горизонтального скролла
+    background-color: #E8EFE9
+
+// ползунок скроллбара
+::-webkit-scrollbar-thumb
+    background-color: $dark-green
+    border-radius: 9em
+    box-shadow: inset 1px 1px 10px #ffffffb4
+
+::-webkit-scrollbar-thumb:hover
+    box-shadow: inset 1px 1px 10px #ffffff79
+
+// Стрелки
+// ::-webkit-scrollbar-button:vertical:start:decrement
+//     background: linear-gradient(120deg, $grey-green 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(240deg, $grey-green 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(0deg, $grey-green 30%, rgba(0, 0, 0, 0) 31%)
+//     background-color: $grey-green
+
+// ::-webkit-scrollbar-button:vertical:end:increment
+//     background: linear-gradient(300deg, $grey-green 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(60deg, $grey-green 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(180deg, $grey-green 30%, rgba(0, 0, 0, 0) 31%)
+//     background-color: $grey-green
+
+// ::-webkit-scrollbar-button:horizontal:start:decrement
+//     background: linear-gradient(30deg, $grey-green 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(150deg, $grey-green 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(270deg, $grey-green 30%, rgba(0, 0, 0, 0) 31%)
+//     background-color: $grey-green
+
+// ::-webkit-scrollbar-button:horizontal:end:increment
+//     background: linear-gradient(210deg, $grey-green 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(330deg, $grey-green 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(90deg, $grey-green 30%, rgba(0, 0, 0, 0) 31%)
+//     background-color: $grey-green
+
+//========scroll==========
+
+//========ibg==========
+
+.ibg
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    position: relative
+
+    img
+        width: 0
+        height: 0
+        position: absolute
+        top: 0
+        left: 0
+        opacity: 0
+        visibility: hidden
+
+//========ibg==========
+
+//========slick==========
+
+/* Слайдер */
+.slick-slider
+
+    /* Слайдер запущен */
+    &.slick-initialized
+
+    /* Слайдер с точками */
+    &.slick-dotted
+
+/* Ограничивающая оболочка */
+.slick-list
+    overflow: hidden
+
+/* Лента слайдов */
+.slick-track
+    display: inline-flex
+
+/* Слайд */
+.slick-slide
+
+    /* Слайд активный (показывается) */
+    &.slick-active
+
+    /* Слайд основной */
+    &.slick-current
+
+    /* Слайд по центру */
+    &.slick-center
+
+    /* Клонированный слайд */
+    &.slick-cloned
+
+/* Стрелка */
+.slick-arrow
+
+    /* Стрелка влево */
+    &.slick-prev
+
+    /* Стрелка вправо */
+    &.slick-next
+
+    /* Стрелка не активная */
+    &.slick-disabled
+
+/* Точки (булиты) */
+.slick-dots
+
+    & li
+
+    /* Активная точка */
+    & li.slick-active
+
+    /* Элемент точки */
+    & li button
+
+//========slick==========
+
+//========item==========
+
+.btn
+    display: block
+    position: relative
+    z-index: 1
+    width: 320px
+    background-color: $red_1
+    text-align: center
+    border: 2px solid $red_1
+    transition: all 0.3s ease 0s
+    overflow: hidden
+
+    &::after
+        content: ""
+        position: absolute
+        height: 0%
+        left: 50%
+        top: 50%
+        width: 150%
+        z-index: 2
+        transition: all 0.5s ease 0s
+        background: $red_2
+        opacity: .5
+        transform: translateY(-50%) translateX(-50%) rotate(90deg)
+
+    &_opacity
+        background-color: #ffffff00
+        color: $red_1
+        border: 2px solid $red_1
+
+    span
+        display: block
+        position: relative
+        z-index: 3
+        width: 100%
+        height: 100%
+        color: #ffffff
+        line-height: 2.0rem
+        letter-spacing: 0.21rem
+        text-transform: uppercase
+        background-color: #ffffff00
+        padding: 20px
+        transition: all 0.3s ease 0.2s
+
+    ._opacity
+        color: $red_1
+
+    &:hover
+        border: 2px solid $red_4
+
+        ._opacity
+            transition: all 0.3s ease 0s
+            color: #ffffff
+
+        &::after
+            opacity: 1
+            height: 600%
+
+    &:active
+        &::after
+            transition: all 0s ease 0s
+            background-color: $red_3
+
+//========item==========
+
+//========item==========
+
+//========item==========

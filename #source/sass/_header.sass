@@ -1,0 +1,182 @@
+.header
+    position: fixed
+    width: 100%
+    z-index: 4
+    background-color: #ffffff
+    border-bottom: 1px solid #a7a7a7
+
+    &__row
+        display: flex
+        position: relative
+        align-items: center
+        overflow: hidden
+        padding: 5px 0px
+
+    &__logo
+        display: inline-block
+        padding: 15px
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        z-index: 5
+
+        svg
+            max-width: 172px
+            max-height: 33px
+
+    &__menu
+        flex: 1 1 auto
+
+    .menu
+
+        &__icon
+            display: none
+
+            @media all and (max-width: 767px)
+                position: absolute
+                z-index: 5
+                top: 23px
+                left: 15px
+                display: block
+                width: 30px
+                height: 18px
+                cursor: pointer
+
+                @media all and (max-width: 419px)
+                    left: 0
+
+                span, &::before, &::after
+                    left: 0
+                    position: absolute
+                    height: 10%
+                    width: 100%
+                    transition: all 0.3s ease 0s
+                    background-color: #000000
+
+                span
+                    top: 50%
+                    transform: scale(1) translate(0px, -50%)
+
+                &::before, &::after
+                    content: ""
+
+                &::before
+                    top: 0
+
+                &::after
+                    bottom: 0
+
+                &_active
+
+                    span, &::before, &::after
+                        background-color: #000000
+
+                    span
+                        transform: scale(0) translate(0px, -50%)
+
+                    &::before
+                        top: 50%
+                        transform: rotate(-45deg) translate(0px, -50%)
+
+                    &::after
+                        top: 50%
+                        transform: rotate(45deg) translate(0px, 50%)
+
+        &__body
+
+            @media all and (max-width: 767px)
+                padding: 68px 0px 0px 0px
+                position: fixed
+                top: 0
+                left: -100%
+                width: 100%
+                height: 100%
+                background-color: rgba(0, 0, 0, 0.9)
+                transition: left 0.3s ease 0s
+                text-align: center
+                overflow: auto
+
+                &::before
+                    content: ""
+                    position: fixed
+                    width: 100%
+                    height: 68px
+                    top: 0
+                    left: 0
+                    background-color: #fff
+                    border-bottom: 1px solid #a7a7a7
+
+                &_active
+                    left: 0
+
+        &__list
+            display: flex
+
+            @media all and (max-width: 767px)
+                flex-direction: column
+
+        &__item
+            position: relative
+            margin: auto 0
+
+            @media all and (max-width: 767px)
+                &:not(:last-child)
+                    &::after
+                        content: ""
+                        background-color: #ffffff
+                        width: 5px
+                        height: 5px
+                        position: absolute
+                        left: 50%
+                        bottom: -2.5px
+                        transform: translate(-50%, 0) rotate(45deg)
+
+            &_right
+                margin: auto 0 auto auto
+
+                @media all and (max-width: 767px)
+                    margin: auto 0
+
+        &__link
+            @extend %menu-link
+            max-width: 150px
+
+            @media all and (max-width: 899px)
+                padding: 15px 7px
+
+                @media all and (max-width: 767px)
+                    width: 100%
+                    padding: 40px 0px
+
+            &_right
+                @media all and (max-width: 899px)
+                    padding: 15px
+
+                    @media all and (max-width: 767px)
+                        padding: 40px 0px
+
+        &__button
+            background-color: #ffffff00
+
+    &__cart
+        display: inline-block
+        padding: 15px
+        position: relative
+
+        @media all and (max-width: 419px)
+            padding: 15px 0px 15px 15px
+
+        svg
+            max-width: 20px
+            max-height: 20px
+
+        path
+            transition: all 0.3s ease 0s
+
+        &:hover
+            path
+                transition: all 0s ease 0s
+                fill: $lite-green
+
+//========header==========
