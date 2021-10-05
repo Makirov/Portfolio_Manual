@@ -309,7 +309,7 @@ body._lock {
   .header .menu__icon {
     position: absolute;
     z-index: 5;
-    top: 23px;
+    top: 24px;
     left: 15px;
     display: block;
     width: 30px;
@@ -478,8 +478,16 @@ body._lock {
   }
 }
 .header__cart svg {
-  max-width: 20px;
-  max-height: 20px;
+  max-width: 19px;
+  max-height: 23px;
+}
+@media all and (max-width: 767px) {
+  .header__cart svg {
+    max-width: 24px;
+    max-height: 24px;
+    width: 24px;
+    height: 24px;
+  }
 }
 .header__cart path {
   -webkit-transition: all 0.3s ease 0s;
